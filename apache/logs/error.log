@@ -1,0 +1,31 @@
+[Wed Jun 02 17:36:25.702228 2021] [ssl:warn] [pid 8260:tid 588] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:25.740387 2021] [ssl:warn] [pid 8260:tid 588] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:25.762861 2021] [mpm_winnt:notice] [pid 8260:tid 588] AH00455: Apache/2.4.47 (Win64) OpenSSL/1.1.1k PHP/8.0.6 configured -- resuming normal operations
+[Wed Jun 02 17:36:25.762861 2021] [mpm_winnt:notice] [pid 8260:tid 588] AH00456: Apache Lounge VS16 Server built: Apr 24 2021 11:08:47
+[Wed Jun 02 17:36:25.762861 2021] [core:notice] [pid 8260:tid 588] AH00094: Command line: 'E:\\xampp\\apache\\bin\\httpd.exe -d E:/xampp/apache'
+[Wed Jun 02 17:36:25.766770 2021] [mpm_winnt:notice] [pid 8260:tid 588] AH00418: Parent: Created child process 8932
+[Wed Jun 02 17:36:26.118821 2021] [ssl:warn] [pid 8932:tid 580] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:26.237683 2021] [ssl:warn] [pid 8932:tid 580] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:26.257226 2021] [mpm_winnt:notice] [pid 8932:tid 580] AH00354: Child: Starting 150 worker threads.
+[Wed Jun 02 17:36:51.412214 2021] [ssl:warn] [pid 8396:tid 556] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:51.460094 2021] [ssl:warn] [pid 8396:tid 556] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:51.482568 2021] [mpm_winnt:notice] [pid 8396:tid 556] AH00455: Apache/2.4.47 (Win64) OpenSSL/1.1.1k PHP/8.0.6 configured -- resuming normal operations
+[Wed Jun 02 17:36:51.482568 2021] [mpm_winnt:notice] [pid 8396:tid 556] AH00456: Apache Lounge VS16 Server built: Apr 24 2021 11:08:47
+[Wed Jun 02 17:36:51.482568 2021] [core:notice] [pid 8396:tid 556] AH00094: Command line: 'e:\\xampp\\apache\\bin\\httpd.exe -d E:/xampp/apache'
+[Wed Jun 02 17:36:51.485499 2021] [mpm_winnt:notice] [pid 8396:tid 556] AH00418: Parent: Created child process 9100
+[Wed Jun 02 17:36:51.761053 2021] [ssl:warn] [pid 9100:tid 600] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:51.808933 2021] [ssl:warn] [pid 9100:tid 600] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:36:51.828476 2021] [mpm_winnt:notice] [pid 9100:tid 600] AH00354: Child: Starting 150 worker threads.
+[Wed Jun 02 17:38:51.451425 2021] [ssl:warn] [pid 14184:tid 424] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:38:51.511567 2021] [core:warn] [pid 14184:tid 424] AH00098: pid file E:/xampp/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Jun 02 17:38:51.513522 2021] [ssl:warn] [pid 14184:tid 424] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:38:51.534547 2021] [mpm_winnt:notice] [pid 14184:tid 424] AH00455: Apache/2.4.47 (Win64) OpenSSL/1.1.1k PHP/8.0.6 configured -- resuming normal operations
+[Wed Jun 02 17:38:51.534547 2021] [mpm_winnt:notice] [pid 14184:tid 424] AH00456: Apache Lounge VS16 Server built: Apr 24 2021 11:08:47
+[Wed Jun 02 17:38:51.534547 2021] [core:notice] [pid 14184:tid 424] AH00094: Command line: 'e:\\xampp\\apache\\bin\\httpd.exe -d E:/xampp/apache'
+[Wed Jun 02 17:38:51.537479 2021] [mpm_winnt:notice] [pid 14184:tid 424] AH00418: Parent: Created child process 6252
+[Wed Jun 02 17:38:51.869450 2021] [ssl:warn] [pid 6252:tid 624] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:38:51.929592 2021] [ssl:warn] [pid 6252:tid 624] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jun 02 17:38:51.953549 2021] [mpm_winnt:notice] [pid 6252:tid 624] AH00354: Child: Starting 150 worker threads.
+[Wed Jun 02 17:40:03.633286 2021] [php:notice] [pid 6252:tid 1812] [client ::1:60923] Error Unknown column 'wp_' in 'field list' de la base de datos de WordPress para la consulta SELECT wp_, referer: http://localhost/muspi_merol/wp-admin/setup-config.php?step=1&language=es_ES
+[Wed Jun 02 17:40:03.636217 2021] [php:notice] [pid 6252:tid 1812] [client ::1:60923] Error Incorrect table name '' de la base de datos de WordPress para la consulta INSERT INTO `` (`option_name`, `option_value`, `autoload`) VALUES ('nonce_key', '*?@WAnwb jpCID;y^kKj?{$%E&dM1o$Q%nY!KbkG&(|1A!Pi$Z%rsQ$b^j4AvkRg', 'no') ON DUPLICATE KEY UPDATE `option_name` = VALUES(`option_name`), `option_value` = VALUES(`option_value`), `autoload` = VALUES(`autoload`) realizada por wp_print_scripts, wp_scripts, WP_Scripts->__construct, WP_Scripts->init, do_action_ref_array('wp_default_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, wp_default_scripts, wp_create_nonce, wp_hash, wp_salt, update_site_option, update_network_option, add_network_option, add_option, referer: http://localhost/muspi_merol/wp-admin/setup-config.php?step=1&language=es_ES
+[Wed Jun 02 17:40:03.637195 2021] [php:notice] [pid 6252:tid 1812] [client ::1:60923] Error Incorrect table name '' de la base de datos de WordPress para la consulta INSERT INTO `` (`option_name`, `option_value`, `autoload`) VALUES ('nonce_salt', 'q,355ud$1D?G<tHL.{vJ!UU@yM<y`g[m;C7Cg.PL27tgX2yQ-_r9IU2Hu& {>K4t', 'no') ON DUPLICATE KEY UPDATE `option_name` = VALUES(`option_name`), `option_value` = VALUES(`option_value`), `autoload` = VALUES(`autoload`) realizada por wp_print_scripts, wp_scripts, WP_Scripts->__construct, WP_Scripts->init, do_action_ref_array('wp_default_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, wp_default_scripts, wp_create_nonce, wp_hash, wp_salt, update_site_option, update_network_option, add_network_option, add_option, referer: http://localhost/muspi_merol/wp-admin/setup-config.php?step=1&language=es_ES
