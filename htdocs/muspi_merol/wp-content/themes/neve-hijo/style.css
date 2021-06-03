@@ -33,12 +33,31 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     max-width: 80%;
 }
 
+/* Padding para hacer más grande al botón para abrir y cerrar menú */
+.builder-item--nav-icon .navbar-toggle {
+    padding: 13px 15px;
+}
 
 
+/* Media query oara Desktop */
 @media screen and (min-width: 960px) {
 
     /* Ubicar a la izquierda la barra de navegación */
     .desktop-right .nv-nav-wrap, .desktop-right .nav-ul {
         justify-content: flex-start;
+    }
+}
+
+/* Media query solo mobile */
+@media screen and (max-width: 575px) {
+    
+    /* Mostrar como columna el logo y el título del sitio */
+    div.site-logo > a.brand > div.title-with-logo {
+        flex-direction: column;
+    }
+
+    /* Margenes nulos para logo del sitio */
+    .site-logo .title-with-logo > img:first-child {
+        margin: 0;
     }
 }
