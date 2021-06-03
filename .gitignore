@@ -1,0 +1,15 @@
+# Archivos temporales de phpMyAdmin
+phpMyAdmin/tmp/*
+# Carpeta tmp de xampp
+tmp/*
+# Carpeta de configuraciones de apache
+apache/conf/*
+# Configuraciones de php
+php/php.ini
+# Configuración MySQL
+mysql/bin/my.ini
+# Logs de apache
+apache/logs/*
+# Configuraciones y logs xampp
+xampp-control.ini
+xampp-control.log
