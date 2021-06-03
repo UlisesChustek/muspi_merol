@@ -1,0 +1,44 @@
+/*
+Theme Name: Neve hijo
+Template: neve
+Description: 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: neve-hijo
+*/
+
+/* Modificar posición y fondo del "Saltar al contenido" */
+a.neve-skip-link {
+    left: 32px;
+    background: var(--nv-primary-accent);
+}
+
+/* Colocar como flex column el header que contiene el título del sitio y la barra de navegación (solo para desktop) */
+nav.hide-on-mobile > div.header--row-inner > div.container > .row, nav.hide-on-mobile > div.header--row-inner > div.container > .row--wrapper, nav.hide-on-tablet > div.header--row-inner > div.container > .row, nav.hide-on-tablet > div.header--row-inner > div.container > .row--wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Permitir ancho al 100% del título del sitio en desktop (a testear que no entre en conflicto con otras páginas y versión mobile) */
+nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-4, nav.hide-on-tablet > div.header--row-inner > div.container > .row > .col-4 {
+    max-width: 100%;
+}
+
+/* Tamaño de letra de título del sitio */
+.site-logo a {
+    font-size: 2em;
+}
+
+/* Permitir ancho al 80% del nav en desktop (a testear que no entre en conflicto con otras páginas y versión mobile) */
+nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.hide-on-tablet > div.header--row-inner > div.container > .row > .col-8 {
+    max-width: 80%;
+}
+
+
+
+@media screen and (min-width: 960px) {
+
+    /* Ubicar a la izquierda la barra de navegación */
+    .desktop-right .nv-nav-wrap, .desktop-right .nav-ul {
+        justify-content: flex-start;
+    }
+}
