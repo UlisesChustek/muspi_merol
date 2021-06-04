@@ -671,3 +671,203 @@
 2021-06-03 15:55:39 0 [ERROR] InnoDB: Your database may be corrupt or you may have copied the InnoDB tablespace but not the InnoDB log files. Please refer to https://mariadb.com/kb/en/library/innodb-recovery-modes/ for information about forcing recovery.
 2021-06-03 15:55:39 0 [Note] InnoDB: Buffer pool(s) load completed at 210603 15:55:39
 2021-06-03 15:55:40 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:01:27 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:01:27 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:01:27 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:01:27 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:01:27 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:01:27 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:01:27 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:01:27 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=2592045
+2021-06-03 23:01:28 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:01:28 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2021-06-03 23:01:28 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:01:28 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:01:28 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:01:28 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:01:28 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592054; transaction id 4012
+2021-06-03 23:01:28 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:01:28 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:01:28 0 [Note] InnoDB: Buffer pool(s) load completed at 210603 23:01:28
+2021-06-03 23:01:28 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:01:28 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:01:28 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:01:28 0 [ERROR] Aborting
+2021-06-03 23:01:55 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:01:55 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:01:55 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:01:55 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:01:55 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:01:55 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:01:55 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:01:55 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:01:55 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:01:55 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:01:55 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:01:55 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:01:55 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592063; transaction id 4012
+2021-06-03 23:01:55 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:01:55 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:01:55 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:01:55 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:01:55 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:01:55 0 [ERROR] Aborting
+2021-06-03 23:02:19 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:02:19 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:02:19 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:02:19 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:02:19 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:02:19 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:02:19 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:02:20 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:02:20 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:02:20 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:02:20 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:02:20 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:02:20 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592072; transaction id 4012
+2021-06-03 23:02:20 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:02:20 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:02:20 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:02:20 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:02:20 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:02:20 0 [ERROR] Aborting
+2021-06-03 23:02:31 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:02:31 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:02:31 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:02:31 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:02:31 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:02:31 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:02:31 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:02:31 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:02:31 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:02:31 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:02:31 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:02:31 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:02:31 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592081; transaction id 4012
+2021-06-03 23:02:31 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:02:31 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:02:31 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:02:31 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:02:31 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:02:31 0 [ERROR] Aborting
+2021-06-03 23:02:36 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:02:36 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:02:36 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:02:36 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:02:36 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:02:36 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:02:36 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:02:36 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:02:36 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:02:36 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:02:36 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:02:36 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:02:36 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592090; transaction id 4012
+2021-06-03 23:02:36 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:02:36 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:02:36 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:02:36 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:02:36 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:02:36 0 [ERROR] Aborting
+2021-06-03 23:03:01 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:03:01 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:03:01 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:03:01 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:03:01 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:03:02 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:03:02 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:03:02 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:03:02 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:03:02 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:03:02 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:03:02 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:03:02 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592099; transaction id 4012
+2021-06-03 23:03:02 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:03:02 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:03:02 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:03:02 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:03:02 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:03:02 0 [ERROR] Aborting
+2021-06-03 23:56:28 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-03 23:56:28 0 [Note] InnoDB: Uses event mutexes
+2021-06-03 23:56:28 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-03 23:56:28 0 [Note] InnoDB: Number of pools: 1
+2021-06-03 23:56:28 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-03 23:56:28 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-03 23:56:28 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-03 23:56:28 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-03 23:56:28 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-03 23:56:28 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-03 23:56:28 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-03 23:56:28 0 [Note] InnoDB: Waiting for purge to start
+2021-06-03 23:56:28 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592108; transaction id 4012
+2021-06-03 23:56:28 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-03 23:56:28 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-03 23:56:28 0 [Note] Server socket created on IP: '::'.
+2021-06-03 23:56:28 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-03 23:56:28 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-03 23:56:28 0 [ERROR] Aborting
+2021-06-04  0:01:30 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-04  0:01:30 0 [Note] InnoDB: Uses event mutexes
+2021-06-04  0:01:30 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-04  0:01:30 0 [Note] InnoDB: Number of pools: 1
+2021-06-04  0:01:30 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-04  0:01:30 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-04  0:01:30 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-04  0:01:30 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-04  0:01:30 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-04  0:01:30 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-04  0:01:30 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-04  0:01:30 0 [Note] InnoDB: Waiting for purge to start
+2021-06-04  0:01:30 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592117; transaction id 4012
+2021-06-04  0:01:30 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-04  0:01:30 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-04  0:01:30 0 [Note] Server socket created on IP: '::'.
+2021-06-04  0:01:30 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-04  0:01:30 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-04  0:01:30 0 [ERROR] Aborting
+2021-06-04  0:29:49 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-04  0:29:49 0 [Note] InnoDB: Uses event mutexes
+2021-06-04  0:29:49 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-04  0:29:49 0 [Note] InnoDB: Number of pools: 1
+2021-06-04  0:29:49 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-04  0:29:49 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-04  0:29:49 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-04  0:29:49 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-04  0:29:49 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-04  0:29:49 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-04  0:29:49 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-04  0:29:49 0 [Note] InnoDB: Waiting for purge to start
+2021-06-04  0:29:49 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592126; transaction id 4012
+2021-06-04  0:29:49 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-04  0:29:49 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-04  0:29:49 0 [Note] InnoDB: Buffer pool(s) load completed at 210604  0:29:49
+2021-06-04  0:29:49 0 [Note] Server socket created on IP: '::'.
+2021-06-04  0:29:49 0 [ERROR] Can't start server: Bind on TCP/IP port. Got error: 10048: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+
+2021-06-04  0:29:49 0 [ERROR] Do you already have another mysqld server running on port: 3306 ?
+2021-06-04  0:29:49 0 [ERROR] Aborting
+2021-06-04  0:40:58 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2021-06-04  0:40:58 0 [Note] InnoDB: Uses event mutexes
+2021-06-04  0:40:58 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2021-06-04  0:40:58 0 [Note] InnoDB: Number of pools: 1
+2021-06-04  0:40:58 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2021-06-04  0:40:58 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2021-06-04  0:40:58 0 [Note] InnoDB: Completed initialization of buffer pool
+2021-06-04  0:40:58 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2021-06-04  0:40:58 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2021-06-04  0:40:58 0 [Note] InnoDB: Setting file 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2021-06-04  0:40:58 0 [Note] InnoDB: File 'C:\Laboratorio\muspi_merol\mysql\data\ibtmp1' size is now 12 MB.
+2021-06-04  0:40:58 0 [Note] InnoDB: Waiting for purge to start
+2021-06-04  0:40:58 0 [Note] InnoDB: 10.4.19 started; log sequence number 2592135; transaction id 4012
+2021-06-04  0:40:58 0 [Note] InnoDB: Loading buffer pool(s) from C:\Laboratorio\muspi_merol\mysql\data\ib_buffer_pool
+2021-06-04  0:40:58 0 [Note] Plugin 'FEEDBACK' is disabled.
+2021-06-04  0:40:58 0 [Note] Server socket created on IP: '::'.
