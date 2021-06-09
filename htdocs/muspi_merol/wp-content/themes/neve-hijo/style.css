@@ -38,6 +38,19 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     padding: 13px 15px;
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url(fuentes/roboto-regular.ttf), 
+        url(fuentes/roboto-regular.woff), 
+        url(fuentes/roboto-regular.woff2);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(fuentes/merriweather-regular.ttf), 
+        url(fuentes/merriweather-regular.woff), 
+        url(fuentes/merriweather-regular.woff2);
+}
 
 /* Media query oara Desktop */
 @media screen and (min-width: 960px) {
