@@ -38,6 +38,47 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     padding: 13px 15px;
 }
 
+/* Centrar horizontalmente imagen de la Hermana Catalina dentro de la columna (testear que no haga conflictos con otras imágenes luego) */
+div.wp-block-cover__inner-container > div.wp-block-columns > div.wp-block-column > figure.wp-block-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* Reseteo márgenes inferiores a columnas */
+div.wp-block-cover__inner-container > div.wp-block-columns {
+    margin-bottom: 0;
+}
+
+/* Sombra para frase de Hermana Catalina */
+div.wp-block-cover__inner-container > h2 > em > span {
+    text-shadow: 4px 4px 10px #000, -3px -3px 5px #0003;
+}
+
+/* Sombra para nombre y descripción de Hermana Catalina */
+div.wp-block-cover__inner-container > div.wp-block-columns > div.wp-block-column > p span {
+    text-shadow: 3px 3px 10px #000, -2px -2px 4px #0003;
+}
+
+/* Decoración de columnas de Inicio donde muestra la Misión Wichí y el Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column {
+    padding: 2em;
+    border-radius: 5px;
+}
+
+/* Colores distintos para cada "tarjeta" de Misión y Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:first-child {
+    background: #3a668175;
+}
+
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:last-child {
+    background: #de3b5175;
+}
+
+/* Eliminar subrayado de links para Misión Wichí y Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column > h3 > a {
+    text-decoration: none;
+}
+
 
 /* Media query oara Desktop */
 @media screen and (min-width: 960px) {
@@ -60,4 +101,14 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     .site-logo .title-with-logo > img:first-child {
         margin: 0;
     }
+    
+}
+
+@media screen and (max-width: 599px) {
+
+    /* Margen inferior para "tarjetas" de Misión y Hogar */
+    div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:first-child {
+        margin-bottom: 1em;
+    }
+
 }
