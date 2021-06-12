@@ -6,6 +6,21 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: neve-hijo
 */
 
+/* Fuentes */
+@font-face {
+    font-family: Roboto;
+    src: url(fuentes/roboto-regular.ttf), 
+        url(fuentes/roboto-regular.woff), 
+        url(fuentes/roboto-regular.woff2);
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url(fuentes/merriweather-regular.ttf), 
+        url(fuentes/merriweather-regular.woff), 
+        url(fuentes/merriweather-regular.woff2);
+}
+
 /* Modificar posición y fondo del "Saltar al contenido" */
 a.neve-skip-link {
     left: 32px;
@@ -38,21 +53,48 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     padding: 13px 15px;
 }
 
-@font-face {
-    font-family: Roboto;
-    src: url(fuentes/roboto-regular.ttf), 
-        url(fuentes/roboto-regular.woff), 
-        url(fuentes/roboto-regular.woff2);
+/* Centrar horizontalmente imagen de la Hermana Catalina dentro de la columna (testear que no haga conflictos con otras imágenes luego) */
+div.wp-block-cover__inner-container > div.wp-block-columns > div.wp-block-column > figure.wp-block-image {
+    display: flex;
+    justify-content: center;
 }
 
-@font-face {
-    font-family: Merriweather;
-    src: url(fuentes/merriweather-regular.ttf), 
-        url(fuentes/merriweather-regular.woff), 
-        url(fuentes/merriweather-regular.woff2);
+/* Reseteo márgenes inferiores a columnas */
+div.wp-block-cover__inner-container > div.wp-block-columns {
+    margin-bottom: 0;
 }
 
-/* Media query oara Desktop */
+/* Sombra para frase de Hermana Catalina */
+div.wp-block-cover__inner-container > h2 > em > span {
+    text-shadow: 4px 4px 10px #000, -3px -3px 5px #0003;
+}
+
+/* Sombra para nombre y descripción de Hermana Catalina */
+div.wp-block-cover__inner-container > div.wp-block-columns > div.wp-block-column > p span {
+    text-shadow: 3px 3px 10px #000, -2px -2px 4px #0003;
+}
+
+/* Decoración de columnas de Inicio donde muestra la Misión Wichí y el Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column {
+    padding: 2em;
+    border-radius: 5px;
+}
+
+/* Colores distintos para cada "tarjeta" de Misión y Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:first-child {
+    background: #3a668175;
+}
+
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:last-child {
+    background: #de3b5175;
+}
+
+/* Eliminar subrayado de links para Misión Wichí y Hogar */
+div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column > h3 a {
+    text-decoration: none;
+}
+
+/* Media query para Desktop */
 @media screen and (min-width: 960px) {
 
     /* Ubicar a la izquierda la barra de navegación */
@@ -73,4 +115,14 @@ nav.hide-on-mobile > div.header--row-inner > div.container > .row > .col-8, nav.
     .site-logo .title-with-logo > img:first-child {
         margin: 0;
     }
+}
+
+/* Media query con max-width donde WP muestra 2 columnas en vez de 1 */
+@media screen and (max-width: 599px) {
+
+    /* Margen inferior para "tarjetas" de Misión y Hogar */
+    div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__inner-container > div.wp-block-columns > div.wp-block-column:first-child {
+        margin-bottom: 1em;
+    }
+
 }
