@@ -14,8 +14,6 @@ apache/logs/*
 xampp-control.ini
 xampp-control.log
 # Archivos MySQL (exceptuando bases de datos)
-mysql/data/mysql/
 mysql/data/ib*
 mysql/data/mysql.pid
 mysql/data/*.log
-
