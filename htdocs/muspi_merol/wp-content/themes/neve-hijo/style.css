@@ -94,6 +94,11 @@ div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__i
     text-decoration: none;
 }
 
+/* text-decoration: none */
+.nv-content-wrap a:not(.button):not(.wp-block-file__button) {
+    text-decoration: none;
+}
+
 /* Media query para Desktop */
 @media screen and (min-width: 960px) {
 
