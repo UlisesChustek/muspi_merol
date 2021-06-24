@@ -17,7 +17,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'wp_enqueue_scripts', [ $this, 'frontend_scripts' ] );
-			add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ],1 );
+			add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ], 1 );
 		}
 
 		public function palettes_allow() {
@@ -43,6 +43,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 		 * @return boolean|void
 		 */
 		public function frontend_scripts( $hook ) {
+
 			if ( ! wp_dark_mode_enabled() ) {
 				return false;
 			}
@@ -77,15 +78,50 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 			}
 
 			//animation css
-			$toggle_animation = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_advanced', 'toggle_animation', 'off' );
+			$toggle_animation = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_animation', 'toggle_animation', 'off' );
 
 			if ( $toggle_animation ) {
-				echo '.wp-dark-mode-active  body { animation: wp-dark-mode-fadein 2.5s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-inactive-fadein 2.5s;}';
+				$animation = wp_dark_mode_get_settings( 'wp_dark_mode_animation', 'animation', 'fade-in-out' );
+				if ( 'fade' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: wp-dark-mode-fadein 2.5s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-inactive-fadein 2.5s;}';
+				} elseif ( 'slide-left' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: wp-dark-mode-slide-left 1s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-slide-right 1s;}';
+				} elseif ( 'slide-up' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: wp-dark-mode-slide-top 1s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-slide-bottom 1s;}';
+				} elseif ( 'slide-right' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: wp-dark-mode-slide-right 1s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-slide-left 1s;}';
+				} elseif ( 'slide-down' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: wp-dark-mode-slide-bottom 1s;} .wp-dark-mode-inactive body {animation: wp-dark-mode-slide-top 1s;}';
+				} elseif ( 'pulse' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: active-pulse 1s;} .wp-dark-mode-inactive body {animation: inactive-pulse 1s;}';
+				} elseif ( 'flip' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: active-flip 1s;} .wp-dark-mode-inactive body {animation: inactive-flip 1s;}';
+				} elseif ( 'roll' == $animation ) {
+					echo '.wp-dark-mode-active  body { animation: active-roll 1s;} .wp-dark-mode-inactive body {animation: inactive-roll 1s;}';
+				}
 			}
+
+
+			//img css
+			$low_brightness = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_image_settings', 'low_brightness', 'off' );
+			$grayscale      = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_image_settings', 'grayscale', 'off' );
+
+
+			if ( $low_brightness && $grayscale ) {
+				echo "html.wp-dark-mode-active img{filter: brightness(90%) grayscale(80%) !important;}";
+			} elseif ( $low_brightness ) {
+				echo "html.wp-dark-mode-active img{filter: brightness(90%) !important;}";
+			} elseif ( $grayscale ) {
+				echo "html.wp-dark-mode-active img{filter: grayscale(80%) !important;}";
+			}
+
 
 			$custom_css = ob_get_clean();
 
 			wp_add_inline_style( 'wp-dark-mode-frontend', $custom_css );
+
+			// RTL support.
+			wp_style_add_data( 'wp-dark-mode-frontend', 'rtl', 'replace' );
 
 		}
 
@@ -109,6 +145,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 			wp_enqueue_style( 'wp-dark-mode-admin', WP_DARK_MODE_ASSETS . '/css/admin.css', false, WP_DARK_MODE_VERSION );
 			wp_enqueue_script( 'jquery.syotimer', WP_DARK_MODE_ASSETS . '/vendor/jquery.syotimer.min.js', [ 'jquery' ], '2.1.2', true );
 
+			if ( 'index.php' == $hook ) {
+				wp_enqueue_script( 'wp-dark-mode-chart', WP_DARK_MODE_ASSETS . '/vendor/chart.bundle.min.js', [], WP_DARK_MODE_VERSION, false );
+			}
 
 			if ( 'toplevel_page_wp-dark-mode-settings' == $hook ) {
 				wp_enqueue_style( 'select2', WP_DARK_MODE_ASSETS . '/vendor/select2.css' );
@@ -126,13 +165,11 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 				wp_enqueue_style( 'wp-codemirror' );
 			}
 
-			wp_enqueue_script( 'wp-dark-mode-chart', WP_DARK_MODE_ASSETS . '/vendor/chart.bundle.min.js', [], WP_DARK_MODE_VERSION, false );
-
 			wp_enqueue_script( 'wp-dark-mode-admin', WP_DARK_MODE_ASSETS . '/js/admin.min.js', [], WP_DARK_MODE_VERSION, true );
 
 			wp_localize_script(
-                'wp-dark-mode-admin', 'wpDarkMode', [
-					'pluginUrl'          => WP_DARK_MODE_URL,
+				'wp-dark-mode-admin', 'wpDarkMode', [
+					'pluginUrl' => WP_DARK_MODE_URL,
 
 					'config' => [
 						'brightness' => wp_dark_mode_get_settings( 'wp_dark_mode_color', 'brightness', 100 ),
@@ -140,9 +177,11 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 						'sepia'      => wp_dark_mode_get_settings( 'wp_dark_mode_color', 'sepia', 10 ),
 					],
 
-					'colors'         => wp_dark_mode_color_presets(),
-					'includes'       => '',
-					'excludes'       => '',
+					'nav_switches' => (array) get_option( 'wp_dark_mode_nav_switches' ),
+
+					'colors'      => wp_dark_mode_color_presets(),
+					'includes'    => '',
+					'excludes'    => '',
 					'common_mode' => self::wp_dark_mode_common_mode(),
 
 					'is_pro_active'      => wp_dark_mode()->is_pro_active(),
@@ -156,7 +195,11 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 					'pro_version' => defined( 'WP_DARK_MODE_PRO_VERSION' ) ? WP_DARK_MODE_PRO_VERSION : 0,
 					'js_ul'       => self::wp_dark_mode_js_ul(),
 				]
-            );
+			);
+
+			//RTL support
+			wp_style_add_data( 'wp-dark-mode-admin', 'rtl', 'replace' );
+
 		}
 
 		private static function wp_dark_mode_js_ul() {

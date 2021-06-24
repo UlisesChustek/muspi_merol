@@ -41,7 +41,10 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 			if ( $this->check_environment() ) {
 				$this->load_files();
 
-				add_filter( 'plugin_action_links_' . plugin_basename( WP_DARK_MODE_FILE ), array( $this, 'plugin_action_links' ) );
+				add_filter( 'plugin_action_links_' . plugin_basename( WP_DARK_MODE_FILE ), array(
+					$this,
+					'plugin_action_links'
+				) );
 				add_action( 'admin_notices', [ $this, 'print_notices' ], 15 );
 				add_action( 'init', [ $this, 'lang' ] );
 
@@ -86,13 +89,13 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 			/** Add notice and deactivate the plugin if the environment is not compatible */
 			if ( ! $return ) {
 				add_action(
-                    'admin_notices', function () use ( $notice ) { ?>
+					'admin_notices', function () use ( $notice ) { ?>
                     <div class="notice is-dismissible notice-error">
                         <p><?php echo $notice; ?></p>
                     </div>
-						<?php
-					}
-                );
+					<?php
+				}
+				);
 
 				return $return;
 			} else {
@@ -175,6 +178,8 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 			include_once WP_DARK_MODE_INCLUDES . '/class-shortcode.php';
 			include_once WP_DARK_MODE_INCLUDES . '/class-hooks.php';
 			include_once WP_DARK_MODE_INCLUDES . '/scss.inc.php';
+			include_once WP_DARK_MODE_INCLUDES . '/class-nav-menu.php';
+			include_once WP_DARK_MODE_INCLUDES . '/class-theme-supports.php';
 
 			/** load gutenberg block */
 			include_once WP_DARK_MODE_PATH . '/block/plugin.php';
@@ -200,21 +205,21 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		/**
 		 * Plugin action links
 		 *
-		 * @param   array  $links
+		 * @param array $links
 		 *
 		 * @return array
 		 */
 		public function plugin_action_links( $links ) {
 			$links[] = sprintf(
-                '<a href="%1$s">%2$s</a>', admin_url( 'admin.php?page=wp-dark-mode-settings' ),
-                __( 'Settings', 'wp-dark-mode' )
-            );
+				'<a href="%1$s">%2$s</a>', admin_url( 'admin.php?page=wp-dark-mode-settings' ),
+				__( 'Settings', 'wp-dark-mode' )
+			);
 
 			if ( ! $this->is_pro_active() && ! $this->is_ultimate_active() ) {
 				$links[] = sprintf(
-                    '<a href="%1$s" target="_blank" style="color: orangered;font-weight: bold;">%2$s</a>',
-                    'https://wppool.dev/wp-dark-mode-pricing', __( 'GET PRO', 'wp-dark-mode' )
-                );
+					'<a href="%1$s" target="_blank" style="color: orangered;font-weight: bold;">%2$s</a>',
+					'https://wppool.dev/wp-dark-mode-pricing', __( 'GET PRO', 'wp-dark-mode' )
+				);
 			}
 
 			return $links;
@@ -224,8 +229,8 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		/**
 		 * Returns path to template file.
 		 *
-		 * @param   null           $name
-		 * @param   boolean|array  $args
+		 * @param null $name
+		 * @param boolean|array $args
 		 *
 		 * @return bool|string
 		 * @since 1.0.0
@@ -263,7 +268,7 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		 *
 		 * @param           $class
 		 * @param           $message
-		 * @param   string  $only_admin
+		 * @param string $only_admin
 		 *
 		 * @return void
 		 */
@@ -306,11 +311,11 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		 */
 		public function appsero_init_tracker_wp_dark_mode() {
 
-			if (!class_exists('Appsero\Client')) {
+			if ( ! class_exists( 'Appsero\Client' ) ) {
 				require_once WP_DARK_MODE_PATH . '/appsero/src/Client.php';
 			}
 
-			$client = new Appsero\Client('10d1a5ba-96f5-48e1-bc0e-38d39b9a2f85', 'WP Dark Mode', WP_DARK_MODE_FILE);
+			$client = new Appsero\Client( '10d1a5ba-96f5-48e1-bc0e-38d39b9a2f85', 'WP Dark Mode', WP_DARK_MODE_FILE );
 
 			// Active insights
 			$client->insights()->init();

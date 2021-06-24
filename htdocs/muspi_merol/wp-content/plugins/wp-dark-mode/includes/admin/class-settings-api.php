@@ -34,7 +34,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			wp_enqueue_script( 'jquery' );
 
 			wp_enqueue_script( 'jquery-ui-slider' );
-			}
+		}
 
 		/**
 		 * Set settings sections
@@ -192,7 +192,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a text field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_text( $args ) {
 			$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -200,9 +200,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$type        = isset( $args['type'] ) ? $args['type'] : 'text';
 			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
 			$html        = sprintf(
-                '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type,
-                $size, $args['section'], $args['id'], $value, $placeholder
-            );
+				'<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type,
+				$size, $args['section'], $args['id'], $value, $placeholder
+			);
 			$html        .= $this->get_field_description( $args );
 			echo $html;
 		}
@@ -210,7 +210,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a url field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_url( $args ) {
 			$this->callback_text( $args );
@@ -219,7 +219,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a number field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_number( $args ) {
 			$value       = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -230,10 +230,10 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$max         = ( $args['max'] == '' ) ? '' : ' max="' . $args['max'] . '"';
 			$step        = ( $args['step'] == '' ) ? '' : ' step="' . $args['step'] . '"';
 			$html
-                        = sprintf(
-                            '<input type="%1$s" class="%2$s-number" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s%7$s%8$s%9$s/>',
-                            $type, $size, $args['section'], $args['id'], $value, $placeholder, $min, $max, $step
-                        );
+			             = sprintf(
+				'<input type="%1$s" class="%2$s-number" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s%7$s%8$s%9$s/>',
+				$type, $size, $args['section'], $args['id'], $value, $placeholder, $min, $max, $step
+			);
 			$html        .= $this->get_field_description( $args );
 			echo $html;
 		}
@@ -241,7 +241,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a number field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_heading( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -253,7 +253,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a checkbox for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_checkbox( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -261,9 +261,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$html  .= sprintf( '<label for="wppool-%1$s[%2$s]">', $args['section'], $args['id'] );
 			$html  .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id'] );
 			$html  .= sprintf(
-                '<input type="checkbox" class="checkbox" id="wppool-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />',
-                $args['section'], $args['id'], checked( $value, 'on', false )
-            );
+				'<input type="checkbox" class="checkbox" id="wppool-%1$s[%2$s]" name="%1$s[%2$s]" value="on" %3$s />',
+				$args['section'], $args['id'], checked( $value, 'on', false )
+			);
 			$html  .= sprintf( '%1$s</label>', $args['desc'] );
 			$html  .= '</fieldset>';
 			echo $html;
@@ -272,22 +272,22 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a switcher for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_switcher( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$html  = '<fieldset class="switcher">';
 			$html  .= sprintf( '<label for="wppool-%1$s[%2$s]">', $args['section'], $args['id'] );
 			$html  .= sprintf(
-                '<div class="wppool-switcher">
+				'<div class="wppool-switcher">
                 <input type="hidden" name="%1$s[%2$s]" value="off" />
                 <input type="checkbox" name="%1$s[%2$s]" id="wppool-%1$s[%2$s]" value="on" %3$s/>
                 <div class="wp-dark-mode-ignore">
                     <label for="wppool-%1$s[%2$s]"></label>
                 </div>
             </div>',
-                $args['section'], $args['id'], checked( $value, 'on', false )
-            );
+				$args['section'], $args['id'], checked( $value, 'on', false )
+			);
 			$html  .= sprintf( '<p class="description"> %1$s</p></label>', $args['desc'] );
 			$html  .= '</fieldset>';
 
@@ -297,7 +297,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a multicheckbox for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_multicheck( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
@@ -307,9 +307,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 				$checked = isset( $value[ $key ] ) ? $value[ $key ] : '0';
 				$html    .= sprintf( '<label for="wppool-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
 				$html    .= sprintf(
-                    '<input type="checkbox" class="checkbox" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />',
-                    $args['section'], $args['id'], $key, checked( $checked, $key, false )
-                );
+					'<input type="checkbox" class="checkbox" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />',
+					$args['section'], $args['id'], $key, checked( $checked, $key, false )
+				);
 				$html    .= sprintf( '%1$s</label><br>', $label );
 			}
 			$html .= $this->get_field_description( $args );
@@ -320,7 +320,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a radio button for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_radio( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
@@ -328,9 +328,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			foreach ( $args['options'] as $key => $label ) {
 				$html .= sprintf( '<label for="wppool-%1$s[%2$s][%3$s]">', $args['section'], $args['id'], $key );
 				$html .= sprintf(
-                    '<input type="radio" class="radio" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />',
-                    $args['section'], $args['id'], $key, checked( $value, $key, false )
-                );
+					'<input type="radio" class="radio" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />',
+					$args['section'], $args['id'], $key, checked( $value, $key, false )
+				);
 				$html .= sprintf( '%1$s</label><br>', $label );
 			}
 			$html .= $this->get_field_description( $args );
@@ -341,20 +341,20 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a image choose for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_image_choose( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
 			$html  = '<fieldset class="wp-dark-mode-ignore" >';
 			foreach ( $args['options'] as $key => $label ) {
 				$html .= sprintf(
-                    '<label class="image-choose-opt %4$s" for="wppool-%1$s[%2$s][%3$s]">', $args['section'], $args['id'],
-                    $key, $value == $key ? 'active' : ''
-                );
+					'<label class="image-choose-opt %4$s" for="wppool-%1$s[%2$s][%3$s]">', $args['section'], $args['id'],
+					$key, $value == $key ? 'active' : ''
+				);
 				$html .= sprintf(
-                    '<input type="radio" class="radio" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />',
-                    $args['section'], $args['id'], $key, checked( $value, $key, false )
-                );
+					'<input type="radio" class="radio" id="wppool-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />',
+					$args['section'], $args['id'], $key, checked( $value, $key, false )
+				);
 				$html .= sprintf( '<img src="%1$s" class="image-choose-img"></label>', $label );
 			}
 			$html .= $this->get_field_description( $args );
@@ -365,7 +365,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a selectbox for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_select( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -382,16 +382,16 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a textarea for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_textarea( $args ) {
 			$value       = esc_textarea( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size        = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 			$placeholder = empty( $args['placeholder'] ) ? '' : ' placeholder="' . $args['placeholder'] . '"';
 			$html        = sprintf(
-                '<textarea rows="5" cols="55" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]"%4$s>%5$s</textarea>',
-                $size, $args['section'], $args['id'], $placeholder, $value
-            );
+				'<textarea rows="5" cols="55" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]"%4$s>%5$s</textarea>',
+				$size, $args['section'], $args['id'], $placeholder, $value
+			);
 			$html        .= $this->get_field_description( $args );
 			echo $html;
 		}
@@ -403,7 +403,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays the html for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 *
 		 * @return string
 		 */
@@ -414,7 +414,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a rich text textarea for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_wysiwyg( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
@@ -436,7 +436,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a file upload field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_file( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -445,9 +445,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$label = isset( $args['options']['button_label'] )
 				? $args['options']['button_label'] : __( 'Choose File', 'wp-dark-mode' );
 			$html  = sprintf(
-                '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size,
-                $args['section'], $args['id'], $value
-            );
+				'<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size,
+				$args['section'], $args['id'], $value
+			);
 			$html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
 			$html  .= $this->get_field_description( $args );
 			echo $html;
@@ -456,15 +456,15 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a password field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_password( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 			$html  = sprintf(
-                '<input type="password" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size,
-                $args['section'], $args['id'], $value
-            );
+				'<input type="password" class="%1$s-text" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size,
+				$args['section'], $args['id'], $value
+			);
 			$html  .= $this->get_field_description( $args );
 			echo $html;
 		}
@@ -472,16 +472,16 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a color picker field for a settings field
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_color( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 			$size  = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
 			$html
-                = sprintf(
-                    '<input type="text" class="%1$s-text wp-color-picker-field wppool-color-field" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" />',
-                    $size, $args['section'], $args['id'], $value, $args['std']
-                );
+			       = sprintf(
+				'<input type="text" class="%1$s-text wp-color-picker-field wppool-color-field" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s" data-default-color="%5$s" />',
+				$size, $args['section'], $args['id'], $value, $args['std']
+			);
 			$html  .= $this->get_field_description( $args );
 			echo $html;
 		}
@@ -489,7 +489,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Displays a select box for creating the pages select box
 		 *
-		 * @param   array  $args  settings field args
+		 * @param array $args settings field args
 		 */
 		function callback_pages( $args ) {
 			$dropdown_args = array(
@@ -529,13 +529,13 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
 
 			$html = sprintf(
-                '
+				'
             <div class="wppool-slider" data-min="%4$s" data-max="%5$s" data-value="%6$s">
             <input type="hidden" id="%1$s[%2$s]" name="%1$s[%2$s]" value="%3$s" />
             <div class="wppool-slider-handle ui-slider-handle"></div>
             </div>
             ', $args['section'], $args['id'], $args['std'], $min, $max, $value
-            );
+			);
 
 			$html .= $this->get_field_description( $args );
 			echo $html;
@@ -544,7 +544,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Get sanitization callback for given option slug
 		 *
-		 * @param   string  $slug  option slug
+		 * @param string $slug option slug
 		 *
 		 * @return mixed string or bool false
 		 */
@@ -571,9 +571,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		/**
 		 * Get the value of a settings field
 		 *
-		 * @param   string  $option   settings field name
-		 * @param   string  $section  the section name this field belongs to
-		 * @param   string  $default  default text if it's not found
+		 * @param string $option settings field name
+		 * @param string $section the section name this field belongs to
+		 * @param string $default default text if it's not found
 		 *
 		 * @return string
 		 */
@@ -614,51 +614,51 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			$this->_style_fix();
 			?>
             <div class="wppool-settings-content">
-	            <?php
-	            foreach ( $this->settings_sections as $form ) {
+				<?php
+				foreach ( $this->settings_sections as $form ) {
 					?>
                     <div id="<?php echo $form['id']; ?>" class="group" style="display: none;">
 
-		            <?php
-		            if ( $form['id'] == 'wp_dark_mode_license' ) {
-			            do_action( 'wsa_form_top_' . $form['id'], $form );
+						<?php
+						if ( $form['id'] == 'wp_dark_mode_license' ) {
+							do_action( 'wsa_form_top_' . $form['id'], $form );
 
-			            settings_fields( $form['id'] );
+							settings_fields( $form['id'] );
 
-			            do_settings_sections( $form['id'] );
+							do_settings_sections( $form['id'] );
 
-			            do_action( 'wsa_form_bottom_' . $form['id'], $form );
-		            } else {
-			            ?>
+							do_action( 'wsa_form_bottom_' . $form['id'], $form );
+						} else {
+							?>
 
-                        <form method="post" action="options.php">
-				            <?php
+                            <form method="post" action="options.php">
+								<?php
 
-				            do_action( 'wsa_form_top_' . $form['id'], $form );
+								do_action( 'wsa_form_top_' . $form['id'], $form );
 
-				            settings_fields( $form['id'] );
+								settings_fields( $form['id'] );
 
-				            do_settings_sections( $form['id'] );
+								do_settings_sections( $form['id'] );
 
-				            do_action( 'wsa_form_bottom_' . $form['id'], $form );
+								do_action( 'wsa_form_bottom_' . $form['id'], $form );
 
-				            if ( isset( $this->settings_fields[ $form['id'] ] ) ) {
-								?>
-                                <div style="padding-left: 10px">
-						            <?php submit_button( 'Save Settings', 'primary', 'save_settings' ); ?>
-                                </div>
-				            <?php } ?>
+								if ( isset( $this->settings_fields[ $form['id'] ] ) ) {
+									?>
+                                    <div style="padding-left: 10px">
+										<?php submit_button( 'Save Settings', 'primary', 'save_settings' ); ?>
+                                    </div>
+								<?php } ?>
 
-                        </form>
+                            </form>
 
-		            <?php } ?>
+						<?php } ?>
                     </div>
 					<?php
-                }
+				}
 
-	            do_action( 'wppool_after_settings' );
+				do_action( 'wppool_after_settings' );
 
-	            ?>
+				?>
             </div>
 			<?php
 			$this->script();
@@ -676,10 +676,11 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 *
 		 * This code uses localstorage for displaying active tabs
 		 */
-		function script() {
-			?>
+		function script() { ?>
             <script>
+
                 jQuery(document).ready(function ($) {
+
                     $(".wppool-slider").each(function () {
                         const $slider = $(this);
                         const min = $slider.data('min');
@@ -699,8 +700,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
                             },
 
                             slide: function (event, ui) {
+
                                 const handle = $(".wppool-slider-handle", $slider);
-                                $("input", $(this)).val(ui.value);
+                                $("input", $slider).val(ui.value);
                                 handle.text(ui.value);
                             }
                         });

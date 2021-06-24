@@ -4,7 +4,7 @@ Tags: dark, dark mode, night mode, gutenberg blocks, dark theme
 Requires at least: 5.0
 Tested up to: 5.7.2
 Requires PHP: 5.6
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -159,6 +159,16 @@ Yes, You can toggle the dark mode/ light mode  by keyboard shortcut `(Ctrl + Alt
 13. Dark mode switch elementor widget
 
 == Changelog ==
+
+= 2.1.1 =
+* New: Added posts exclude settings
+* New: Added RTL supports
+* New: Added new switch styles  for choosing the fontsize + dark mode toggle
+* New: Added an option to add Dark Mode from the default WordPress menu
+* New: In light mode image / dark mode image - Added option to choose files from WP Media library
+* New: Added transition styles when page switch to Dark Mode from light mode via button click.
+* New: Added options to serve grayscale & lower brightness images when Dark Mode is on
+* Fix: Fixed exclude elements issue
 
 = 2.1.0 =
 * New: Added exclude all pages except option

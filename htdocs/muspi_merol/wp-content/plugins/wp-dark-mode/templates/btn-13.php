@@ -1,5 +1,4 @@
-<div class="wp-dark-mode-switcher wp-dark-mode-ignore  style-13  <?php echo ! empty( $class ) ? $class : ''; ?> <?php echo 'yes' == $floating
-	? "floating $position" : ''; ?>">
+<div class="wp-dark-mode-switcher wp-dark-mode-ignore  style-13  <?php echo ! empty( $class ) ? $class : ''; ?> <?php echo 'yes' == $floating ? "floating $position" : ''; ?>">
 
 	<?php
 	!empty($cta_text) && printf( '<span class="wp-dark-mode-switcher-cta wp-dark-mode-ignore">%s <span class="wp-dark-mode-ignore"></span></span>', $cta_text );

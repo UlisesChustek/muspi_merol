@@ -34,7 +34,6 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 
 			add_filter( 'wp_dark_mode/switch_label_class', [ $this, 'switch_label_class' ] );
 
-
 		}
 
 		public function not_selectors() {
@@ -217,6 +216,58 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 			$excludes        = wp_dark_mode_get_settings( 'wp_dark_mode_includes_excludes', 'excludes' );
 			$includes        = wp_dark_mode_get_settings( 'wp_dark_mode_includes_excludes', 'includes' );
 
+			?>
+
+            <script>
+                ;(function () {
+                    //Handle excludes
+                    if ('' !== `<?php echo $excludes; ?>`) {
+                        const elements = document.querySelectorAll(`<?php echo $excludes; ?>`);
+
+                        elements.forEach((element) => {
+                            element.classList.add('wp-dark-mode-ignore');
+                            const children = element.querySelectorAll('*');
+
+                            children.forEach((child) => {
+                                child.classList.add('wp-dark-mode-ignore');
+                            });
+                        });
+                    }
+
+                    //handle includes
+                    if ('' !== `<?php echo $includes; ?>`) {
+                        const elements = document.querySelectorAll(`<?php echo $includes; ?>`);
+
+                        elements.forEach((element) => {
+                            element.classList.add('wp-dark-mode-include');
+                            const children = element.querySelectorAll('*');
+
+                            children.forEach((child) => {
+                                child.classList.add('wp-dark-mode-include');
+                            })
+                        });
+                    }
+
+                    //Font size toggle
+                    ;(function () {
+                        const toggle = document.querySelector('.wp-dark-mode-font-size-toggle');
+
+                        if (!toggle) {
+                            return;
+                        }
+
+                        const isActive = localStorage.getItem('wp_dark_mode_large_font');
+
+                        if ('true' === isActive) {
+                            document.querySelector('body').classList.add('wp-dark-mode-large-font');
+                            toggle.classList.add('active');
+                        }
+
+                    })();
+                })();
+            </script>
+
+			<?php
 			//Automatic color
 			if ( ! $is_custom_color ) { ?>
 
@@ -243,6 +294,8 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
                             }
                         }
                     })();
+
+
                 </script>
 			<?php } else { ?>
 
@@ -267,53 +320,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
                                 });
                             })();
 
-                        //Handle excludes
-                        if ('' !== `<?php echo $excludes; ?>`) {
-                            const elements = document.querySelectorAll(`<?php echo $excludes; ?>`);
-
-                            elements.forEach((element) => {
-                                element.classList.add('wp-dark-mode-ignore');
-                                const children = element.querySelectorAll('*');
-
-                                children.forEach((child) => {
-                                    child.classList.add('wp-dark-mode-ignore');
-                                });
-                            });
-                        }
-
-                        //handle includes
-                        if ('' !== `<?php echo $includes; ?>`) {
-                            const elements = document.querySelectorAll(`<?php echo $includes; ?>`);
-
-                            elements.forEach((element) => {
-                                element.classList.add('wp-dark-mode-include');
-                                const children = element.querySelectorAll('*');
-
-                                children.forEach((child) => {
-                                    child.classList.add('wp-dark-mode-include');
-                                })
-                            });
-                        }
-
-
                     })();
-
-                    //Font size toggle
-                    ;(function () {
-                        const toggle = document.querySelector('.wp-dark-mode-font-size-toggle');
-
-                        if (!toggle) {
-                            return;
-                        }
-
-                        const isActive = localStorage.getItem('wp_dark_mode_large_font');
-
-                        if ('true' === isActive) {
-                            document.querySelector('body').classList.add('wp-dark-mode-large-font');
-                            toggle.classList.add('active');
-                        }
-
-                    })()
                 </script>
 
 				<?php

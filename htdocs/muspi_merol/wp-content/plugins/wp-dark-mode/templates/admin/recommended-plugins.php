@@ -96,6 +96,41 @@ if ( $data && ! is_wp_error( $data ) ) {
     $recommended_plugins['dark-mode']->short_description = 'Quickly edit content in WordPress by getting an immersive, peaceful and natural writing experience with the coolest editor.';
 }
 
+
+
+/* jitsi meet Plugin */
+$args = [
+	'slug' => 'sheets-to-wp-table-live-sync',
+	'fields' => [
+		'short_description' => true,
+		'icons' => true,
+		'reviews'  => false, // excludes all reviews
+	],
+];
+$data = plugins_api( 'plugin_information', $args );
+if ( $data && ! is_wp_error( $data ) ) {
+	$recommended_plugins['sheets-to-wp-table-live-sync'] = $data;
+	$recommended_plugins['sheets-to-wp-table-live-sync']->name = 'Sheets To WP Table Live Sync';
+	$recommended_plugins['sheets-to-wp-table-live-sync']->short_description = 'Google Sheets allows you to input data on your Google sheet and show the same data on WordPress as a table effortlessly.';
+}
+
+/* jitsi meet Plugin */
+$args = [
+	'slug' => 'webinar-and-video-conference-with-jitsi-meet',
+	'fields' => [
+		'short_description' => true,
+		'icons' => true,
+		'reviews'  => false, // excludes all reviews
+	],
+];
+$data = plugins_api( 'plugin_information', $args );
+if ( $data && ! is_wp_error( $data ) ) {
+	$recommended_plugins['webinar-and-video-conference-with-jitsi-meet'] = $data;
+	$recommended_plugins['webinar-and-video-conference-with-jitsi-meet']->name = 'Webinar and Video Conference with Jitsi Meet';
+	$recommended_plugins['webinar-and-video-conference-with-jitsi-meet']->short_description = 'Webinar and Video Conference with Jitsi Meet.';
+}
+
+
 /* Flexiaddons Plugin */
 $args = [
     'slug' => 'flexiaddons',
@@ -112,10 +147,9 @@ if ( $data && ! is_wp_error( $data ) ) {
     $recommended_plugins['flexiaddons']->short_description = 'A collection of premium quality & highly customizable addons or modules for use in Elementor page builder.';
 }
 
-
-/* jitsi meet Plugin */
+/* zero-bs-accounting */
 $args = [
-    'slug' => 'webinar-and-video-conference-with-jitsi-meet',
+    'slug' => 'zero-bs-accounting',
     'fields' => [
         'short_description' => true,
         'icons' => true,
@@ -124,9 +158,9 @@ $args = [
 ];
 $data = plugins_api( 'plugin_information', $args );
 if ( $data && ! is_wp_error( $data ) ) {
-    $recommended_plugins['webinar-and-video-conference-with-jitsi-meet'] = $data;
-    $recommended_plugins['webinar-and-video-conference-with-jitsi-meet']->name = 'Webinar and Video Conference with Jitsi Meet';
-    $recommended_plugins['webinar-and-video-conference-with-jitsi-meet']->short_description = 'Webinar and Video Conference with Jitsi Meet.';
+    $recommended_plugins['zero-bs-accounting'] = $data;
+    $recommended_plugins['zero-bs-accounting']->name = 'Zero BS Accounting';
+    $recommended_plugins['zero-bs-accounting']->short_description = 'Get the painless, trouble-free, and swift calculation plugin. For non-accountants, it is the most flexible accounting plugin.';
 }
 
 /* call-to-action-block-wppool Plugin */

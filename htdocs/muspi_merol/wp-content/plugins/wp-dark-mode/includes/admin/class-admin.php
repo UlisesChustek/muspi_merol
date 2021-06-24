@@ -101,7 +101,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Admin' ) ) {
 				}
 			}
 
-			if ( ! wp_dark_mode_is_hello_elementora() ) {
+			if (  !wp_dark_mode_is_hello_elementora() ) {
 				$labels = [ '20-05-2021', '21-05-2021', '22-05-2021', '24-05-2021', '25-05-2021', '27-05-2021', '29-05-2021', ];
 				$values = [ '57', '56', '60', '59', '57', '60', '58' ];
 			}
@@ -144,8 +144,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Admin' ) ) {
 		 */
 		public function save_settings() {
 
+
 		    //Update font-size toggle if the specific switch selected
-			if ( ! empty( $_POST['wp_dark_mode_switch']['switch_style'] ) && 14 == $_POST['wp_dark_mode_switch']['switch_style'] ) {
+			if ( ! empty( $_POST['wp_dark_mode_switch']['switch_style'] ) && in_array(intval($_POST['wp_dark_mode_switch']['switch_style']), [14,15,16,17,18, 19]) ) {
 				$accessibility_options                     = (array) get_option( 'wp_dark_mode_accessibility' );
 				$accessibility_options['font_size_toggle'] = 'on';
 
@@ -212,7 +213,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Admin' ) ) {
 		 * handle review notice
 		 */
 		public function handle_review_notice() {
-			$value = ! empty( $_REQUEST['value'] ) ? wp_unslash( $_REQUEST['value'] ) : 7;
+			$value = ! empty( $_REQUEST['value'] ) ? sanitize_text_field( $_REQUEST['value'] ) : 7;
 
 			if ( 'hide_notice' == $value ) {
 				update_option( 'wp_dark_mode_review_notice_interval', 'off' );
@@ -228,7 +229,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Admin' ) ) {
 		 * handle affiliate notice
 		 */
 		public function handle_affiliate_notice() {
-			$value = ! empty( $_REQUEST['value'] ) ? wp_unslash( $_REQUEST['value'] ) : 7;
+			$value = ! empty( $_REQUEST['value'] ) ? sanitize_text_field( $_REQUEST['value'] ) : 7;
 
 			if ( 'hide_notice' == $value ) {
 				update_option( 'wp_dark_mode_affiliate_notice_interval', 'off' );
