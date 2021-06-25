@@ -99,6 +99,11 @@ div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__i
     text-decoration: none;
 }
 
+/* Background de sub-menús */
+nav.elementor-element .has-nav .has_menu .nv-nav-wrap .nav-ul .sub-menu {
+    background-color: var(--nv-site-bg);
+}
+
 /* Media query para Desktop */
 @media screen and (min-width: 960px) {
 

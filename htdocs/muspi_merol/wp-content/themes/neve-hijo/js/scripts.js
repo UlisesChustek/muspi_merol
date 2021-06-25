@@ -16,6 +16,10 @@ let div3 = document.getElementsByClassName("elementor-element elementor-element-
 for(var k = 0; k < div3.length; k++)
     div3[k].className += " item--inner builder-item--primary-menu has_menu";
 
+let div3b = document.getElementsByClassName("elementor-element elementor-element-e99923d elementor-widget elementor-widget-wp-widget-nav_menu");
+for(var m = 0; m < div3b.length; m++)
+    div3b[m].className += " item--inner builder-item--primary-menu has_menu"
+
 let div4 = document.getElementsByClassName("elementor-widget-wrap elementor-element-populated");
 for(var l = 0; l < div4.length; l++)
     div4[l].className += " builder-item has-nav hfg-item-last col-8 desktop-left"
@@ -23,11 +27,17 @@ for(var l = 0; l < div4.length; l++)
 //
 // Creación del elemento 'icono' para ser añadido al nav
 //
+const spanIcono = document.createElement("span");
+const spanIcono2 = document.createElement("span");
+spanIcono.className = "caret";
+spanIcono2.className = "caret";
 const icono = document.createElement("i"); // Creación del icono en memoria
 const icono2 = document.createElement("i");
 icono.className = "fas fa-caret-down"; // Asignándole clase para mostrar el icono de FontAwesome
 icono2.className = "fas fa-caret-down"; // Solución "precaria", crear 2 elementos iguales
 let aLink254 = document.querySelector("#menu-item-254 a"); // Seleccionar item "Misión Wichí"
-aLink254.appendChild(icono); // Insertar icono dentro del item "Misión Wichí"
+aLink254.appendChild(spanIcono); // Insertar spanIcono dentro del item "Misión Wichí"
 let aLink256 = document.querySelector("#menu-item-256 a"); // Seleccionar item "Hogar de día"
-aLink256.appendChild(icono2); // Insertar icono dentro del item "Hogar de día"
+aLink256.appendChild(spanIcono2); // Insertar spanIcono dentro del item "Hogar de día"
+spanIcono.appendChild(icono);
+spanIcono2.appendChild(icono2);
