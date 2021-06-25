@@ -99,6 +99,11 @@ div.wp-block-cover__inner-container > div.wp-block-group > div.wp-block-group__i
     text-decoration: none;
 }
 
+/* Color de títulos de headers */
+div.elementor-element div.elementor-element .elementor-widget-container .elementor-heading-title {
+    color: var(--nv-text-color);
+}
+
 /* Background de sub-menús */
 nav.elementor-element .has-nav .has_menu .nv-nav-wrap .nav-ul .sub-menu {
     background-color: var(--nv-site-bg);
