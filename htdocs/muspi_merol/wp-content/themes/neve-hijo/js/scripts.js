@@ -22,7 +22,7 @@ for(var m = 0; m < div3b.length; m++)
 
 let div4 = document.getElementsByClassName("elementor-widget-wrap elementor-element-populated");
 for(var l = 0; l < div4.length; l++)
-    div4[l].className += " builder-item has-nav hfg-item-last col-8 desktop-left"
+    div4[l].className += " builder-item has-nav hfg-item-last desktop-left"
 
 //
 // Creación del elemento 'icono' para ser añadido al nav
