@@ -109,6 +109,11 @@ nav.elementor-element .has-nav .has_menu .nv-nav-wrap .nav-ul .sub-menu {
     background-color: var(--nv-site-bg);
 }
 
+/* Background para menú mobile */
+#header-menu-sidebar-bg {
+    background: var(--nv-site-bg);
+}
+
 /* Media query para Desktop */
 @media screen and (min-width: 960px) {
 
@@ -129,6 +134,18 @@ nav.elementor-element .has-nav .has_menu .nv-nav-wrap .nav-ul .sub-menu {
     /* Margenes nulos para logo del sitio */
     .site-logo .title-with-logo > img:first-child {
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    /* Ocultar nav de Elementor en mobile */
+    section[data-id="6f009be"], section[data-id="cc7a905"] {
+        display: none;
+    }
+
+    /* Margen inferior para header para que el main no se encuentre muy junto al header */
+    header#masthead {
+        margin-bottom: 2.5em;
     }
 }
 
