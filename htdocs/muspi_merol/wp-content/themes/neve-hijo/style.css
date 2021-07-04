@@ -32,6 +32,11 @@ a.neve-skip-link {
     background: var(--nv-primary-accent);
 }
 
+/* Modificar z-index de la clase que usa "Saltar al contenido" para que se muestre delante de todos los elementos */
+.show-on-focus:focus {
+    z-index: 999;
+}
+
 /* Colocar como flex column el header que contiene el título del sitio y la barra de navegación (solo para desktop) */
 nav.hide-on-mobile > div.header--row-inner > div.container > .row, nav.hide-on-mobile > div.header--row-inner > div.container > .row--wrapper, nav.hide-on-tablet > div.header--row-inner > div.container > .row, nav.hide-on-tablet > div.header--row-inner > div.container > .row--wrapper {
     flex-direction: column;
