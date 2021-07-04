@@ -1,19 +1,27 @@
 let ulnav = document.getElementById("menu-menu-principal");
-let catMision = document.querySelector('[href="http://localhost/muspi_merol/category/mision-wichi/"]');
-let catHogar = document.querySelector('[href="http://localhost/muspi_merol/category/hogar-de-dia/"]');
+let catMision = document.querySelectorAll('[href="http://localhost/muspi_merol/category/mision-wichi/"]');
+let catHogar = document.querySelectorAll('[href="http://localhost/muspi_merol/category/hogar-de-dia/"]');
 
 if((catMision === null) && (catHogar === null)) {
     // No ejecutar nada si son nulos ambos
 } else if(catHogar === null) {
     // Si catHogar = null, modificar catMision
-    catMision.innerHTML = "Misión Wichí";
+    for(var m = 0; m < catMision.length; m++) {
+        catMision[m].innerHTML = "Misión Wichí";
+    }
 } else if(catMision === null) {
     // Si catMision = null, modificar catHogar
-    catHogar.innerHTML = "Hogar de día San José";
+    for(var h = 0; h < catHogar.length; h++) {
+        catHogar[h].innerHTML = "Hogar de día San José";
+    }
 } else {
     // Si catMision y catHogar no son nulos, modificar ambos ??
-    catMision.innerHTML = "Misión Wichí";
-    catHogar.innerHTML = "Hogar de día San José";
+    for(var r = 0; r < catMision.length; r++) {
+        catMision[r].innerHTML = "Misión Wichí";
+    }
+    for(var p = 0; p < catHogar.length; p++) {
+        catHogar[p].innerHTML = "Hogar de día San José";
+    }
 }
 
 // IF para ejecutar la asignación de clases a elementos del header y nav cuando sea necesario

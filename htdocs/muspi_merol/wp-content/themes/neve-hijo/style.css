@@ -21,6 +21,11 @@ Text Domain: neve-hijo
         url(fuentes/merriweather-regular.woff2);
 }
 
+/* Class margin: auto */
+.marginAuto {
+    margin: auto;
+}
+
 /* Modificar posición y fondo del "Saltar al contenido" */
 a.neve-skip-link {
     left: 32px;
